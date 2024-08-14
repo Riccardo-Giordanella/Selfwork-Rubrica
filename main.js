@@ -23,6 +23,7 @@ const rubrica = {
         { contact_name: 'Zenitsu', contact_phone: 321654987 },
     ],
 
+    // Funziona mostra contatto
     showContacts : function(){
         contacts_wrapper.innerHTML = '';
         this.contact_list.forEach( (contatto)=>{
@@ -38,6 +39,7 @@ const rubrica = {
         });
 
         // Cattura delle icone
+        // Icona cestino che elimina il contatto
         let iconsTrash = document.querySelectorAll('.iconTrash');
         iconsTrash.forEach((icon, i) => {
             icon.addEventListener('click', () => {
@@ -46,6 +48,7 @@ const rubrica = {
             });
         });
 
+        // Icona matita che permette di modificare il contatto
         let iconsPencil = document.querySelectorAll(`.iconPencil`);
         iconsPencil.forEach((icon, i)=>{
             icon.addEventListener('click', ()=>{
@@ -65,6 +68,7 @@ const rubrica = {
         })
     },
 
+    // Funzione aggiungi contatto
     addContact : function(newName, newPhone){
         if(newName && newPhone){
             this.contact_list.push({ contact_name: newName, contact_phone: newPhone });
@@ -78,6 +82,7 @@ const rubrica = {
         }
     },
 
+    // Funzione che rimuove il contatto dal button
     removeContact : function(removedName){
         let names = this.contact_list.map((contatto)=> contatto.contact_name);
         let index = names.indexOf(removedName);
@@ -97,6 +102,7 @@ const rubrica = {
 
 }
 
+// Evento al click showcontacts
 showContactsBtn.addEventListener('click', ()=>{
     if(check == false){
         rubrica.showContacts();
@@ -109,12 +115,14 @@ showContactsBtn.addEventListener('click', ()=>{
     }
 })
 
+// Evento al click bottone aggiungi contatto
 addContactBtn.addEventListener('click', () => {
     rubrica.addContact(inputName.value, inputPhone.value);
     inputName.value = '';
     inputPhone.value = '';
 })
 
+// Evento al click bottone rimuovi contatto
 removeContactBtn.addEventListener('click', ()=>{
     rubrica.removeContact(inputName.value);
 })
