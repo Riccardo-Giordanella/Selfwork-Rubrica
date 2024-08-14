@@ -1,0 +1,44 @@
+:root{
+    --vb: rgb(142, 164, 210);
+}
+
+h1{
+    color: var(--vb);
+}
+
+p{
+    margin: 0px;
+    padding: 0px;
+}
+
+.btn-custom{
+    border: 2px, solid, black;
+    width: 200px;
+    height: 70px;
+}
+
+.btn-custom:hover{
+    background-color: black;
+    color: white;
+}
+
+.input-custom{
+    margin: 0px;
+    border: 3px solid black;
+    padding: 3px;
+}
+
+.card{
+    box-shadow: 2px 2px 5px black, -2px -2px 5px black;
+    height: 50px;
+    border-radius: 20px;
+    display: flex;
+    align-items: center;
+    flex-direction: row;
+    justify-content: space-around;
+    margin-top: 15px;
+}
+
+.iconTrash, .iconPencil{
+    cursor: pointer;
+}
